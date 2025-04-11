@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambda Calculus Visualizer</title>
+    <link rel="icon" href="frontend/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="frontend/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1><img src="frontend/assets/lambda.svg">-<span style="color: teal;">C</span>alculus <span
+                style="color:teal">V</span>isualizer</h1>
+
+        <div class="input-section">
+            <!-- <label for="lambda-term">Enter Lambda Term:</label> -->
+            <div id="lambda-term-container">
+                <input type="text" id="lambda-term" placeholder="your lambda term, e.g., fun:x.x">
+                <button class="small-button transp-background" id="clear-input">×</button>
+            </div>
+            <button id="step-forwards-button">
+                <!-- Step Forward Icon SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-step-forward">
+                    <line x1="6" x2="6" y1="4" y2="20" />
+                    <polygon points="10,4 20,12 10,20" />
+                </svg>
+                </svg>
+            </button>
+            <button id="play-button">
+                <!-- Play Icon SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-play">
+                    <polygon points="6 3 20 12 6 21 6 3" />
+                </svg>
+                </svg>
+            </button>
+
+        </div>
+        <div class="menu">
+            <div class="menu-buttons">
+                <button class="collapsible boolean small-button transp-background">
+                    <img src="frontend/assets/bool-cond.svg" alt="SVG Icon">
+                </button>
+                <button class="collapsible nat small-button transp-background">
+                    <img src="frontend/assets/nat.svg">
+                </button>
+                <button class="collapsible rec small-button transp-background">
+                    <img src="frontend/assets/loop.svg" width="16" height="16">
+                </button>
+            </div>
+            <div class="content boolean">
+                <ul id="church-conditions">
+                    <li><span class="item-text">⊤</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">⊥</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">IFELSE</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">∧</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">∨</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">¬</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">XOR</span><span class="tooltip"></span></li>
+                    <!-- Add more predefined terms as needed -->
+                </ul>
+            </div>
+            <div class="content nat">
+                <ul id="church-naturals">
+                    <li><span class="item-text">nat <input id="in-church-nat" type="number" value="0" min="0"
+                                style="width: 32px"></span><span class="tooltip"></span></li>
+                    <li><span class="item-text">S</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">PRED</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">+</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">-</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">≤</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">×</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">EXP</span><span class="tooltip"></span></li>
+                    <li><span class="item-text">=</span><span class="tooltip"></span></li>
+                    <!-- Add more predefined terms as needed -->
+                </ul>
+            </div>
+            <div class="content rec">
+                <ul id="fixed-point">
+                    <li><span class="item-text">REC</span><span class="tooltip"></span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="output-section">
+            <button class="small-button" id="clear-output" style="margin-bottom: -16;">×</button>
+            <div id="reduction-steps" class="reduction-steps">
+                <ul></ul>
+            </div>
+        </div>
+
+    </div>
+    <script type="module" src="frontend/script.js"></script>
+</body>
+
+</html>

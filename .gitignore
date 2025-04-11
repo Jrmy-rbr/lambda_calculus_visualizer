@@ -1,0 +1,16 @@
+.env
+
+# VSCode settings
+.vscode/
+
+.pytest*
+
+# mypy
+.mypy*
+
+# node mudules 
+node_modules
+
+package*.json
+
+.DS_Store
