@@ -6,7 +6,7 @@
 
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -17,7 +17,8 @@ body {
 }
 
 h1 {
-    font-family: cursive;
+    font-family: 'Felipa', handwriting;
+    letter-spacing: 2px;
     color: var(--button_background_color);
 }
 h1 img{
@@ -105,6 +106,7 @@ input[type=text]:focus{
     margin-right: 10px;
     border: none;
     flex-grow: 1;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
